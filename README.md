@@ -13,7 +13,24 @@ Helm is the simplification of this. With Helm, you can simply download your pref
   3. Allows you to jump between your preferred versions of the Helm chart.
   4. Everything with just a single CLI command.
 
-# Helm installation on Ubuntu
+Helm charts are structured like this:
+    mychart/
+      Chart.yaml
+      values.yaml
+      charts/
+      templates/
+      ...
+  The templates/ directory is for template files. When Helm evaluates a chart, it will send all of the files in the templates/ directory through the template rendering engine. 
+  It then collects the results of those templates and sends them on to Kubernetes.
+  
+  The values.yaml file is also important to templates. This file contains the default values for a chart. These values may be overridden by users during helm install or helm 
+  upgrade.
+  
+  The Chart.yaml file contains a description of the chart. You can access it from within a template.
+  
+  The charts/ directory may contain other charts (which we call subcharts). Later in this guide we will see how those work when it comes to template rendering.
+
+## Helm installation on Ubuntu
 ```bash
 curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null
 sudo apt-get install apt-transport-https --yes
