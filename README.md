@@ -14,12 +14,14 @@ Helm is the simplification of this. With Helm, you can simply download your pref
   4. Everything with just a single CLI command.
 
 Helm charts are structured like this:
+```
     mychart/
       Chart.yaml
       values.yaml
       charts/
       templates/
       ...
+```
   The templates/ directory is for template files. When Helm evaluates a chart, it will send all of the files in the templates/ directory through the template rendering engine. 
   It then collects the results of those templates and sends them on to Kubernetes.
   
