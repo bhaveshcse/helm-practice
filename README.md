@@ -33,6 +33,7 @@ Helm charts are structured like this:
   The charts/ directory may contain other charts (which we call subcharts). Later in this guide we will see how those work when it comes to template rendering.
 
 ## Helm installation on Ubuntu
+
 ```bash
 curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null
 sudo apt-get install apt-transport-https --yes
